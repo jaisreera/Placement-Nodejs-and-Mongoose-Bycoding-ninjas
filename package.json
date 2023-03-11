@@ -10,6 +10,7 @@
   "author": "Garima jain",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.8",
@@ -17,10 +18,10 @@
     "express-ejs": "^2.0.0",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
+    "json2csv": "^6.0.0-alpha.2",
     "mongoose": "^6.10.0",
     "nodemon": "^2.0.20",
     "passport": "^0.6.0",
-    "passport-local": "^1.0.0",
-    "request": "^2.88.2"
+    "passport-local": "^1.0.0"
   }
 }

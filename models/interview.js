@@ -13,20 +13,20 @@ const interviewSchema = new mongoose.Schema(
         },
         students: [
         {
-            student: {
+            
             type: mongoose.Schema.Types.ObjectId,
             ref: "Student",
-            },
-            result: {
-            type: String,
-            enum: [
-                "Selected",
-                "Not Selected",
-                "On Hold",
-                "Absent",
-                "Interview Pending",
-            ],
-            },
+            
+            // result: {
+            // type: String,
+            // enum: [
+            //     "Selected",
+            //     "Not Selected",
+            //     "On Hold",
+            //     "Absent",
+            //     "Interview Pending",
+            // ],
+            // },
         },
         ],
     },
