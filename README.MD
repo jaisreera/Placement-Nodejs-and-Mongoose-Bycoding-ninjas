@@ -30,19 +30,4 @@
 
 
 
-      <!-- <div>
-                <label for="student">Select Student for Interview</label><br>
-                
-                <% for (var i of student){ %>
-                
-                    <input type="checkbox" id="student" name="student" value="<% i._id %>">
-                    <label for="student"><%= i.name %></label><br>
-                    
-
-                    <!-- <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                    <label for="vehicle2"> I have a car</label><br>
-                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                    <label for="vehicle3"> I have a boat</label><br><br> -->
-                    
-                <% } %>
-            </div> -->
+     

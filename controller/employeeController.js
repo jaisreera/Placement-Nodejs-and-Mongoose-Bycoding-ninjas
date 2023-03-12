@@ -86,10 +86,8 @@ module.exports.add_student_to_cell=async function(req,res){
         webD_score:req.body.webD_score,
         react_score:req.body.react_score
     })
-
     console.log(student)
-
-    res.redirect('back')
+    res.redirect('/')
 }
 
 
@@ -99,14 +97,15 @@ module.exports.add_interview=function(req,res){
 
 
 module.exports.add_interview_to_cell=async function(req,res){
-
     console.log(req.body)
     const interview=await INTERVIEW.create(req.body)
     console.log(interview)
-    res.redirect('back')
+    res.redirect('/')
 }
 
-module.exports.logout=function(req,res){}
+module.exports.logout=function(req,res){
+    res.redirect('/employee/sign_in')
+}
 
 module.exports.edit_student=async function(req,res){
     console.log(req.params.id)
@@ -118,9 +117,7 @@ module.exports.edit_student=async function(req,res){
 }
 
 module.exports.edit_student_details=async function(req,res){
-
     var student=await Student.findById(req.params.id)
-
     if(req.body.status!=student.status && req.body.status=="Placed"){
         await Student.deleteOne({_id:req.params.id})
         return  res.redirect('/')
@@ -142,11 +139,8 @@ module.exports.edit_student_details=async function(req,res){
                         result: req.body.result,
                     }
                 ]
-
-
         }
         })
-
         var company=await  Interview.findOne({company_name:req.body.company})
         if(!company){
 
@@ -155,75 +149,34 @@ module.exports.edit_student_details=async function(req,res){
                 date:req.body.date,
                 
             })
-
-
-
         }
-        
-     
-
         await company.students.push(updated_student)
-
         company.save()
-
-
         student.save()
 
-    }
-    
+    }  
     console.log(student,company)
-
-    res.redirect('back')
+    res.redirect('/')
 }
 
-module.exports.edit_interview=async function(req,res){
-    
+module.exports.edit_interview=async function(req,res){   
     const interview=await Interview.findOne({_id:req.params.id}).populate('students')
-
     const student=await Student.find({})
-
     console.log(interview,student)
     res.render('edit_interview',{
         interview:interview,
         student:student
     })
-
-
-
-
-
 }
 
 module.exports.edit_interview_details=async function(req,res){
-
     console.log(req.body)
-
-
-    var interview=await Interview.findById(req.params.id)
-    
-    var updated_interview=await Interview.findByIdAndUpdate(req.params.id,{
-        
+    var interview=await Interview.findById(req.params.id)   
+    var updated_interview=await Interview.findByIdAndUpdate(req.params.id,{        
         name:req.body.company_name,
         date:req.body.date
 
     })
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
+    res.redirect('/');
     // var i=0;
-
-    
-
-
 }

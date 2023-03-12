@@ -30,7 +30,7 @@ module.exports.download = async function (req, res) {
                 if (student.interviews.length > 0) {
                 for (var interview of student.interviews) {
 
-                    console.log(interview.date)
+                    // console.log(interview.date)
 
                     
                     entry  +=
@@ -57,7 +57,7 @@ module.exports.download = async function (req, res) {
                 }
                 // req.flash("success", "Details Downloaded Successfully!!");
                 res.download("assets/data.csv");
-                res.redirect('/')
+                // res.redirect('/')
                 }
             );
             console.log("csv")
