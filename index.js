@@ -11,40 +11,14 @@ const session = require('express-session')
 const expressLayouts=require('express-ejs-layouts')
 
 
-
-
-
-// const request = require('request');
-
-// const options = {
-//   method: 'GET',
-
-
-
-//   url: 'https://hotels-com-provider.p.rapidapi.com/v2/domains',
-//   headers: {
-//     'X-RapidAPI-Key': '92c0db195dmsha4147c2f61e81f6p1fe6e6jsna5a386199245',
-//     'X-RapidAPI-Host': 'hotels-com-provider.p.rapidapi.com',
-//     useQueryString: true
-//   }
-// };
-
-// request(options, function (error, response, body) {
-// 	if (error) throw new Error(error);
-
-// 	console.log(body);
-// });
-
-
 app.use(express.urlencoded({extended:true}));
 
 app.use(cookieParser());
 
 app.use(express.static('./assets'));
-//make the uploads path available to the browser
-// app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.use(expressLayouts);
+
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
@@ -78,10 +52,6 @@ app.use(session({
         console.log("error at mongo store",err || "connection established to store cookie");
     })
 }))
-
-
-
-
 
 app.use(passport.initialize());
 app.use(passport.session());
