@@ -1,6 +1,7 @@
 const express=require('express');
 const fs = require('fs');
-const PORT = process.env.PORT;
+// const env = require('./.env');
+const PORT = process.env.env;
 const Port=PORT||8000
 
 const app=express();
@@ -48,7 +49,7 @@ app.use(session({
     store: MongoStore.create({
         //options)
     // store : new MongoStore({
-       mongoUrl : "mongodb:27017/Placement_Cell",
+       mongoUrl : "mongodb+srv://rahulkumar:Ul21nmsx0jh6if7g@rahul.xp4pjhu.mongodb.net/rahulkumar?retryWrites=true&w=majority",
         autoremove : "disabled",
     },function(err){
         console.log("error at mongo store",err || "connection established to store cookie");
