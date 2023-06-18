@@ -1,14 +1,16 @@
-const express=require('express')
-const Port=process.env.PORT||8000
+const express=require('express');
+const fs = require('fs');
+const PORT = process.env.PORT;
+const Port=PORT||8000
 
-const app=express()
+const app=express();
 const cookieParser = require('cookie-parser');
-const mongoDb=require('./config/mongoose')
-const passport=require('passport')
-const passportLocal=require('./config/passport')
-const MongoStore=require('connect-mongo')
-const session = require('express-session')
-const expressLayouts=require('express-ejs-layouts')
+const mongoDb=require('./config/mongoose');
+const passport=require('passport');
+const passportLocal=require('./config/passport');
+const MongoStore=require('connect-mongo');
+const session = require('express-session');
+const expressLayouts=require('express-ejs-layouts');
 
 
 app.use(express.urlencoded({extended:true}));
@@ -46,7 +48,7 @@ app.use(session({
     store: MongoStore.create({
         //options)
     // store : new MongoStore({
-       mongoUrl : "mongodb://0.0.0.0:27017/Placement_Cell",
+       mongoUrl : "mongodb:27017/Placement_Cell",
         autoremove : "disabled",
     },function(err){
         console.log("error at mongo store",err || "connection established to store cookie");
