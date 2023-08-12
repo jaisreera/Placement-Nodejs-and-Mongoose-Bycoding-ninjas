@@ -1,3 +1,6 @@
+# host link
+https://placement-nodejs-7z83.onrender.com
+
 # Team Career Camp wants to maintain a database of all the student interviews [only for their own use], for this they store the following details:
     - Batch
     - Student Details (including college, status: [placed, not_placed])
