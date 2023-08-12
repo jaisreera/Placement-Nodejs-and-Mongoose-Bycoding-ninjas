@@ -5,7 +5,7 @@ const Interview = require('../models/interview')
 
 
 module.exports.SignUp=function(req,res){
-    res.render('employee_SignUp')
+    res.render('employee/sign_up')
 }
 // console.log("hey we are here to sort the issue between two and more compaies okay so dont worry we will do it perfectly ")
 
