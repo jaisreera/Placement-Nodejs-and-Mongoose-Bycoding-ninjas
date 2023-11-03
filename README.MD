@@ -1,5 +1,5 @@
 # host link
-https://placement-cell-idwv.onrender.com/employee/sign_in
+https://placement-cell-idwv.onrender.com
 
 # Team Career Camp wants to maintain a database of all the student interviews [only for their own use], for this they store the following details:
     - Batch
